@@ -548,7 +548,7 @@ This mapping system is also called "chaining". Because 2 bits out of the address
 \end{minipage}
  \par
 
-The magic happens in function \cw{VL\_DePlaneVGA} where VGA registers are manipulated to tweak what the BIOS had setup in Mode 13h. \\
+The magic happens in function \cw{VL\_DePlaneVGA} where VGA registers are manipulated to tweak what the BIOS had set up in Mode 13h. \\
 
  \par
  \begin{minipage}{\textwidth}
@@ -556,7 +556,7 @@ The magic happens in function \cw{VL\_DePlaneVGA} where VGA registers are manipu
 \end{minipage}
 
  \par
- The VGA registers of the Sequence Controller and CRT Controller are setup to divide the 256KiB VRAM into four parts.
+ The VGA registers of the Sequence Controller and CRT Controller are set up to divide the 256KiB VRAM into four parts.
  \begin{itemize}\label{SetupPages}
  \item 64,000 bytes for Framebuffer 0
  \item 64,000 bytes for Framebuffer 1
@@ -620,7 +620,7 @@ This code looks like it would work, but there is a major flaw with it. If you we
  \fullimage{crtc_scanstart_problem.png}
  \end{figure}
 \par
-This glitch shows both misalignment and parts of two pages. This problem has to do with atomicity. The CRTC starting address is a 16-bit value but the \cw{out} instruction can only write 8 bits at a time. If the pages are setup one after another like this.
+This glitch shows both misalignment and parts of two pages. This problem has to do with atomicity. The CRTC starting address is a 16-bit value but the \cw{out} instruction can only write 8 bits at a time. If the pages are set up one after another like this.
 \par
 \begin{figure}[H]
  \centering
